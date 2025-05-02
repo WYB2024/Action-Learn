@@ -1,0 +1,11 @@
+name: debugger-action
+on: workflow_dispatch
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: debian:buster
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
