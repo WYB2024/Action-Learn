@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup Debug Session
-        uses: P3TERX/debugger-action@master
+        uses: mxschmitt/action-tmate@v1
