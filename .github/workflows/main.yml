@@ -7,5 +7,8 @@ jobs:
     container: debian:buster
     steps:
       - uses: actions/checkout@v4
+      - name: Install deps
+        run: apt install -y sudo
+        
       - name: Setup Debug Session
         uses: mxschmitt/action-tmate@v1
