@@ -1,14 +1,10 @@
 name: debugger-action
 on: workflow_dispatch
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: debian:buster
     steps:
-      - uses: actions/checkout@v4
-      - name: Install deps
-        run: apt install -y sudo
-        
+      - uses: actions/checkout@v2
       - name: Setup Debug Session
-        uses: mxschmitt/action-tmate@v1
+        uses: csexton/debugger-action@master
