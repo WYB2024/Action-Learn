@@ -5,7 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out
+      - uses: actions/checkout@v4
+      
       - name: Get apt installed list
       - run: |
           echo "############################################"
@@ -17,6 +19,7 @@ jobs:
           echo "Create list."
           apt list --installed > ~/ins.lst
           echo "############################################"
+          
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
     
