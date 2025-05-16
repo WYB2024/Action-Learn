@@ -6,5 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Get apt installed list
+      - run: |
+          echo "############################################"
+          echo "Change to home dir."
+          cd ~
+          echo "############################################"
+          echo "Home is `pwd`"
+          echo "############################################"
+          echo "Create list."
+          apt list --installed > ~/ins.lst
+          echo "############################################"
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
+    
