@@ -6,8 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Print home dir
       - run: echo ${HOME}
