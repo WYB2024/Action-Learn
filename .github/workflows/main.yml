@@ -1,18 +1,13 @@
 name: debugger-action
 on:
   workflow_dispatch
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Print home dir
-      - run: echo ${HOME}
-        
-      - name: List installed APT packages
-        run: apt list --installed > ~/ins.lst
-
-      - name: Debugging with csexton action
+      - uses: actions/checkout@v2
+      - name: Get apt packages list
+      - run: apt list --installed > /home/runner/ins.lst
+      - name: Setup Debug Session
         uses: csexton/debugger-action@master
