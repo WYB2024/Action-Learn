@@ -1,13 +1,17 @@
 name: debugger-action
 on:
-  workflow_dispatch
-  
+  push:
+    branches:
+      - test
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get apt packages list
-      - run: apt list --installed > /home/runner/ins.lst
+      - name: List packages
+        run: |
+          apt list --installed > ./list.lst
+          echo "$PWD/list.lst"
+          ls -la
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
